@@ -43,7 +43,7 @@ export default function Home() {
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <div>
               <div className="flex flex-wrap gap-2">
-                {["Bâtiments", "Pavetage", "Assainissement", "Éclairage public", "Routes"].map((t) => (
+                {["Bâtiments", "Pavage", "Assainissement", "Éclairage public", "Routes"].map((t) => (
                   <span
                     key={t}
                     className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/90"
@@ -90,7 +90,7 @@ export default function Home() {
                 <div className="mt-5 grid gap-4">
                   {[
                     { icon: "building", title: "Bâtiments", sub: "Construction & réhabilitation" },
-                    { icon: "pavers", title: "Pavetage", sub: "Voiries & aménagements" },
+                    { icon: "pavers", title: "Pavage", sub: "Voiries & aménagements" },
                     { icon: "water", title: "Assainissement", sub: "Caniveaux & drainage" },
                     { icon: "bolt", title: "Éclairage", sub: "Installation & maintenance" },
                     { icon: "road", title: "Routes", sub: "Terrassements & chaussées" },
