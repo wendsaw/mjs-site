@@ -157,7 +157,7 @@ export default function Home() {
             />
             <ServiceCard
               icon="pavers"
-              title="Pavetage & aménagements"
+              title="Pavage & aménagements"
               description="Voiries urbaines, bordures, pavés, trottoirs, plateformes et aménagements extérieurs."
             />
             <ServiceCard
