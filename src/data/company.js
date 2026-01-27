@@ -4,6 +4,7 @@ export const BRAND = {
   description:
     "MJS Construction est une société de génie civil basée au Burkina Faso, spécialisée dans le BTP : bâtiments, pavage, assainissement, éclairage public et travaux de routes.",
   address: "Burkina Faso",
+  logo: "/logo-mjs.png", // ✅ chemin public
 };
 
 export const CONTACTS = {
