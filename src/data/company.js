@@ -2,7 +2,7 @@ export const BRAND = {
   name: "MJS CONSTRUCTION",
   tagline: "Génie civil & BTP au Burkina Faso",
   description:
-    "MJS Construction est une société de génie civil basée au Burkina Faso, spécialisée dans le BTP : bâtiments, pavetage, assainissement, éclairage public et travaux de routes.",
+    "MJS Construction est une société de génie civil basée au Burkina Faso, spécialisée dans le BTP : bâtiments, pavage, assainissement, éclairage public et travaux de routes.",
   address: "Burkina Faso",
 };
 
