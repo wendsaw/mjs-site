@@ -33,7 +33,8 @@ function ServiceCard({ icon, title, description }) {
 
 export default function Home() {
   const subject = `Demande de devis — ${BRAND.name}`;
-  const body = `Bonjour,%0D%0A%0D%0AJe souhaite obtenir un devis pour un projet de BTP.%0D%0A%0D%0AType de projet : %0D%0ALieu : %0D%0ADélai : %0D%0A%0D%0AMerci.%0D%0A`;
+  const body =
+    "Bonjour,%0D%0A%0D%0AJe souhaite obtenir un devis pour un projet de BTP.%0D%0A%0D%0AType de projet : %0D%0ALieu : %0D%0ADélai : %0D%0A%0D%0AMerci.%0D%0A";
 
   return (
     <>
@@ -43,7 +44,14 @@ export default function Home() {
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <div>
               <div className="flex flex-wrap gap-2">
-                {["Bâtiments", "Pavage", "Assainissement", "Éclairage public", "Routes"].map((t) => (
+                {[
+                  "Bâtiments",
+                  "Pavage",
+                  "Assainissement",
+                  "Éclairage public",
+                  "Routes",
+                  "Topographie",
+                ].map((t) => (
                   <span
                     key={t}
                     className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/90"
@@ -94,6 +102,7 @@ export default function Home() {
                     { icon: "water", title: "Assainissement", sub: "Caniveaux & drainage" },
                     { icon: "bolt", title: "Éclairage", sub: "Installation & maintenance" },
                     { icon: "road", title: "Routes", sub: "Terrassements & chaussées" },
+                    { icon: "map", title: "Topographie", sub: "Levé & implantation" },
                   ].map((x) => (
                     <div key={x.title} className="rounded-2xl bg-white/5 p-5">
                       <div className="flex items-center gap-3">
@@ -176,9 +185,9 @@ export default function Home() {
               description="Terrassements, couches de forme, chaussées, ouvrages annexes et entretien."
             />
             <ServiceCard
-              icon="check"
-              title="Suivi & maîtrise"
-              description="Organisation de chantier, contrôle qualité, sécurité, reporting et respect des délais."
+              icon="map"
+              title="Travaux topographiques"
+              description="Levé topographique, bornage, nivellement et assistance technique pour projets de construction et d’infrastructures."
             />
           </div>
         </Container>

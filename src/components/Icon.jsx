@@ -1,3 +1,4 @@
+// src/components/Icon.jsx
 import React from "react";
 
 export default function Icon({ name, className = "h-5 w-5" }) {
@@ -8,6 +9,7 @@ export default function Icon({ name, className = "h-5 w-5" }) {
           <path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       );
+
     case "phone":
       return (
         <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -20,6 +22,7 @@ export default function Icon({ name, className = "h-5 w-5" }) {
           />
         </svg>
       );
+
     case "mail":
       return (
         <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -27,6 +30,7 @@ export default function Icon({ name, className = "h-5 w-5" }) {
           <path d="m4 6 8 7 8-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       );
+
     case "arrow":
       return (
         <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -34,6 +38,7 @@ export default function Icon({ name, className = "h-5 w-5" }) {
           <path d="m13 5 7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       );
+
     case "shield":
       return (
         <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -45,12 +50,14 @@ export default function Icon({ name, className = "h-5 w-5" }) {
           />
         </svg>
       );
+
     case "bolt":
       return (
         <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
         </svg>
       );
+
     case "building":
       return (
         <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -69,6 +76,7 @@ export default function Icon({ name, className = "h-5 w-5" }) {
           />
         </svg>
       );
+
     case "road":
       return (
         <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -77,6 +85,7 @@ export default function Icon({ name, className = "h-5 w-5" }) {
           <path d="M4 22h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
         </svg>
       );
+
     case "water":
       return (
         <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -88,6 +97,7 @@ export default function Icon({ name, className = "h-5 w-5" }) {
           />
         </svg>
       );
+
     case "pavers":
       return (
         <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -99,18 +109,35 @@ export default function Icon({ name, className = "h-5 w-5" }) {
           />
         </svg>
       );
+
+    // ✅ Nouveau : icône Topographie / Carte
+    case "map":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path
+            d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3V6Z"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinejoin="round"
+          />
+          <circle cx="12" cy="10" r="2.5" stroke="currentColor" strokeWidth="2" />
+        </svg>
+      );
+
     case "menu":
       return (
         <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
         </svg>
       );
+
     case "x":
       return (
         <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
         </svg>
       );
+
     default:
       return null;
   }
