@@ -12,7 +12,7 @@ export const CONTACTS = {
     title: "PDG",
     name: "Wendpingré Edgard Sawadogo",
     phones: ["+22625452315", "+22671082315"],
-    email: "wend@mjsconstruction.org",
+    email: "contact@mjsconstruction.org",
   },
   dt: {
     title: "Directeur Technique",

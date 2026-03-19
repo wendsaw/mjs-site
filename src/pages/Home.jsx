@@ -119,7 +119,7 @@ export default function Home() {
 
                   <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
                     <div className="text-sm font-semibold text-white">Contact principal</div>
-                    <div className="mt-2 text-xs text-white/60">PDG — {CONTACTS.pdg.name}</div>
+                    <div className="mt-2 text-xs text-white/60">MJS CONSTRUCTION</div>
                     <div className="mt-3 flex flex-wrap gap-2">
                       <a
                         href={formatPhoneForTel(CONTACTS.pdg.phones[0])}
