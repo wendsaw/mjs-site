@@ -81,7 +81,7 @@ export default function Contact() {
 
         <div className="grid gap-5 lg:grid-cols-3">
           <ContactCard role="Direction générale" person={CONTACTS.pdg} />
-          <ContactCard role="Direction technique" person={CONTACTS.dt} />
+          <ContactCard role="Direction Logistique" person={CONTACTS.dt} />
           <ContactCard role="Administration & finance" person={CONTACTS.daf} />
         </div>
 

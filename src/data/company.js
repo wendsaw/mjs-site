@@ -15,7 +15,7 @@ export const CONTACTS = {
     email: "contact@mjsconstruction.org",
   },
   dt: {
-    title: "Directeur Technique",
+    title: "Directeur Logistique",
     name: "William Sawadogo",
     phones: ["+22676252735", "+22625452315"],
     email: "contact@mjsconstruction.org",
