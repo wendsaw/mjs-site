@@ -15,9 +15,9 @@ export const CONTACTS = {
     email: "contact@mjsconstruction.org",
   },
   dt: {
-    title: "Directeur Logistique",
-    name: "William Sawadogo",
-    phones: ["+22676252735", "+22625452315"],
+    title: "Directeur Technique",
+    name: "Dabilgou W Y Kader",
+    phones: ["+22674513124", "+22625452315"],
     email: "contact@mjsconstruction.org",
   },
   daf: {

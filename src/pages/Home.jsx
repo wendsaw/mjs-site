@@ -19,12 +19,18 @@ function ServiceCard({ icon, title, description }) {
   return (
     <Card className="p-6">
       <div className="flex items-start gap-4">
-        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-900 text-white">
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-slate-900 text-white">
           <Icon name={icon} className="h-6 w-6" />
         </div>
+
         <div>
-          <h3 className="text-lg font-bold text-slate-900">{title}</h3>
-          <p className="mt-1 text-sm leading-relaxed text-slate-600">{description}</p>
+          <h3 className="text-lg font-bold text-slate-900">
+            {title}
+          </h3>
+
+          <p className="mt-1 text-sm leading-relaxed text-slate-600">
+            {description}
+          </p>
         </div>
       </div>
     </Card>
@@ -33,15 +39,20 @@ function ServiceCard({ icon, title, description }) {
 
 export default function Home() {
   const subject = `Demande de devis — ${BRAND.name}`;
+
   const body =
-    "Bonjour,%0D%0A%0D%0AJe souhaite obtenir un devis pour un projet de BTP.%0D%0A%0D%0AType de projet : %0D%0ALieu : %0D%0ADélai : %0D%0A%0D%0AMerci.%0D%0A";
+    "Bonjour,%0D%0A%0D%0AJe souhaite obtenir un devis pour un projet.%0D%0A%0D%0AType de projet : %0D%0ALieu : %0D%0ADélai : %0D%0A%0D%0AMerci.%0D%0A";
 
   return (
     <>
-      {/* HERO */}
+      {/* =========================================================
+          HERO
+      ========================================================== */}
       <section className="bg-slate-950">
         <Container className="py-14 sm:py-20">
           <div className="grid items-center gap-10 lg:grid-cols-2">
+
+            {/* COLONNE GAUCHE */}
             <div>
               <div className="flex flex-wrap gap-2">
                 {[
@@ -51,6 +62,7 @@ export default function Home() {
                   "Éclairage public",
                   "Routes",
                   "Topographie",
+                  "Équipements BTP & miniers",
                 ].map((t) => (
                   <span
                     key={t}
@@ -66,15 +78,28 @@ export default function Home() {
               </h1>
 
               <p className="mt-5 max-w-xl text-base leading-relaxed text-white/70">
-                {BRAND.description} Nous intervenons avec des équipes qualifiées, un suivi technique strict et une
-                exigence constante de qualité.
+                {BRAND.description} Nous intervenons avec des équipes
+                qualifiées, un suivi technique strict et une exigence
+                constante de qualité.
               </p>
 
               <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <Button href={formatMailTo("contact@mjsconstruction.org", subject, body)} variant="primary">
-                  Demander un devis <Icon name="arrow" className="h-4 w-4" />
+                <Button
+                  href={formatMailTo(
+                    "contact@mjsconstruction.org",
+                    subject,
+                    body
+                  )}
+                  variant="primary"
+                >
+                  Demander un devis
+                  <Icon name="arrow" className="h-4 w-4" />
                 </Button>
-                <Button href={formatPhoneForTel(CONTACTS.pdg.phones[0])} variant="ghost">
+
+                <Button
+                  href={formatPhoneForTel(CONTACTS.pdg.phones[0])}
+                  variant="ghost"
+                >
                   Appeler : {CONTACTS.pdg.phones[0]}
                 </Button>
               </div>
@@ -87,54 +112,183 @@ export default function Home() {
               </div>
             </div>
 
+            {/* COLONNE DROITE */}
             <div className="relative">
               <div className="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-tr from-white/10 via-white/5 to-transparent blur-2xl" />
+
               <div className="relative rounded-[2.5rem] border border-white/10 bg-white/5 p-6 shadow-2xl">
+
                 <div className="flex items-center justify-between">
-                  <div className="text-sm font-semibold text-white">Domaines</div>
-                  <div className="text-xs text-white/60">{BRAND.address}</div>
+                  <div className="text-sm font-semibold text-white">
+                    Domaines d'activité
+                  </div>
+
+                  <div className="text-xs text-white/60">
+                    {BRAND.address}
+                  </div>
                 </div>
 
                 <div className="mt-5 grid gap-4">
-                  {[
-                    { icon: "building", title: "Bâtiments", sub: "Construction & réhabilitation" },
-                    { icon: "pavers", title: "Pavage", sub: "Voiries & aménagements" },
-                    { icon: "water", title: "Assainissement", sub: "Caniveaux & drainage" },
-                    { icon: "bolt", title: "Éclairage", sub: "Installation & maintenance" },
-                    { icon: "road", title: "Routes", sub: "Terrassements & chaussées" },
-                    { icon: "map", title: "Topographie", sub: "Levé & implantation" },
-                  ].map((x) => (
-                    <div key={x.title} className="rounded-2xl bg-white/5 p-5">
-                      <div className="flex items-center gap-3">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white text-slate-900">
-                          <Icon name={x.icon} className="h-5 w-5" />
+
+                  {/* Bâtiments */}
+                  <div className="rounded-2xl bg-white/5 p-5">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white text-slate-900">
+                        <Icon name="building" className="h-5 w-5" />
+                      </div>
+
+                      <div>
+                        <div className="text-sm font-bold text-white">
+                          Bâtiments
                         </div>
-                        <div>
-                          <div className="text-sm font-bold text-white">{x.title}</div>
-                          <div className="text-xs text-white/60">{x.sub}</div>
+                        <div className="text-xs text-white/60">
+                          Construction & réhabilitation
                         </div>
                       </div>
                     </div>
-                  ))}
+                  </div>
 
+                  {/* Pavage */}
+                  <div className="rounded-2xl bg-white/5 p-5">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white text-slate-900">
+                        <Icon name="pavers" className="h-5 w-5" />
+                      </div>
+
+                      <div>
+                        <div className="text-sm font-bold text-white">
+                          Pavage
+                        </div>
+                        <div className="text-xs text-white/60">
+                          Voiries & aménagements
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Assainissement */}
+                  <div className="rounded-2xl bg-white/5 p-5">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white text-slate-900">
+                        <Icon name="water" className="h-5 w-5" />
+                      </div>
+
+                      <div>
+                        <div className="text-sm font-bold text-white">
+                          Assainissement
+                        </div>
+                        <div className="text-xs text-white/60">
+                          Caniveaux & drainage
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Éclairage */}
+                  <div className="rounded-2xl bg-white/5 p-5">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white text-slate-900">
+                        <Icon name="bolt" className="h-5 w-5" />
+                      </div>
+
+                      <div>
+                        <div className="text-sm font-bold text-white">
+                          Éclairage public
+                        </div>
+                        <div className="text-xs text-white/60">
+                          Installation & maintenance
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Routes */}
+                  <div className="rounded-2xl bg-white/5 p-5">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white text-slate-900">
+                        <Icon name="road" className="h-5 w-5" />
+                      </div>
+
+                      <div>
+                        <div className="text-sm font-bold text-white">
+                          Routes
+                        </div>
+                        <div className="text-xs text-white/60">
+                          Terrassements & chaussées
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Topographie */}
+                  <div className="rounded-2xl bg-white/5 p-5">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white text-slate-900">
+                        <Icon name="map" className="h-5 w-5" />
+                      </div>
+
+                      <div>
+                        <div className="text-sm font-bold text-white">
+                          Topographie
+                        </div>
+                        <div className="text-xs text-white/60">
+                          Levé & implantation
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Équipements BTP & miniers */}
+                  <div className="rounded-2xl bg-white/5 p-5">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white text-slate-900">
+                        <Icon name="equipment" className="h-5 w-5" />
+                      </div>
+
+                      <div>
+                        <div className="text-sm font-bold text-white">
+                          Équipements BTP & miniers
+                        </div>
+                        <div className="text-xs text-white/60">
+                          Vente & fourniture d'équipements
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Contact */}
                   <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                    <div className="text-sm font-semibold text-white">Contact principal</div>
-                    <div className="mt-2 text-xs text-white/60">MJS CONSTRUCTION</div>
+                    <div className="text-sm font-semibold text-white">
+                      Contact principal
+                    </div>
+
+                    <div className="mt-2 text-xs text-white/60">
+                      MJS CONSTRUCTION
+                    </div>
+
                     <div className="mt-3 flex flex-wrap gap-2">
                       <a
-                        href={formatPhoneForTel(CONTACTS.pdg.phones[0])}
+                        href={formatPhoneForTel(
+                          CONTACTS.pdg.phones[0]
+                        )}
                         className="rounded-xl bg-white px-3 py-2 text-xs font-bold text-slate-900 hover:bg-white/90"
                       >
                         {CONTACTS.pdg.phones[0]}
                       </a>
+
                       <a
-                        href={formatMailTo(CONTACTS.pdg.email, subject, body)}
+                        href={formatMailTo(
+                          CONTACTS.pdg.email,
+                          subject,
+                          body
+                        )}
                         className="rounded-xl bg-white/10 px-3 py-2 text-xs font-semibold text-white hover:bg-white/15"
                       >
                         {CONTACTS.pdg.email}
                       </a>
                     </div>
                   </div>
+
                 </div>
               </div>
             </div>
@@ -142,53 +296,80 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* SERVICES */}
+      {/* =========================================================
+          SERVICES
+      ========================================================== */}
       <section className="bg-slate-50">
         <Container className="py-14 sm:py-20">
+
           <div className="mb-10">
             <div className="inline-flex rounded-full bg-slate-900 px-3 py-1 text-xs font-semibold text-white">
-              Services
+              Nos activités
             </div>
+
             <h2 className="mt-4 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
               Nos domaines d’intervention
             </h2>
+
             <p className="mt-3 max-w-3xl text-base text-slate-600">
-              Des prestations complètes en génie civil et BTP, adaptées aux besoins des collectivités, entreprises et
-              partenaires.
+              MJS Construction intervient dans les domaines du génie civil,
+              du BTP, de la topographie ainsi que dans la vente
+              d’équipements destinés aux secteurs du BTP et des activités
+              minières.
             </p>
           </div>
 
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+
+            {/* 1 - Bâtiments */}
             <ServiceCard
               icon="building"
               title="Bâtiments"
-              description="Construction, réhabilitation, extensions : ouvrages administratifs, éducatifs, sanitaires, résidentiels."
+              description="Construction, réhabilitation, extensions : ouvrages administratifs, éducatifs, sanitaires et résidentiels."
             />
+
+            {/* 2 - Pavage */}
             <ServiceCard
               icon="pavers"
               title="Pavage & aménagements"
               description="Voiries urbaines, bordures, pavés, trottoirs, plateformes et aménagements extérieurs."
             />
+
+            {/* 3 - Assainissement */}
             <ServiceCard
               icon="water"
               title="Assainissement"
               description="Caniveaux, dalots, drainage, réseaux d’évacuation et ouvrages d’assainissement."
             />
+
+            {/* 4 - Éclairage */}
             <ServiceCard
               icon="bolt"
               title="Éclairage public"
-              description="Installation, modernisation, maintenance : candélabres, réseaux, armoires et sécurisation."
+              description="Installation, modernisation et maintenance : candélabres, réseaux, armoires et sécurisation."
             />
+
+            {/* 5 - Routes */}
             <ServiceCard
               icon="road"
               title="Travaux de routes"
               description="Terrassements, couches de forme, chaussées, ouvrages annexes et entretien."
             />
+
+            {/* 6 - Topographie */}
             <ServiceCard
               icon="map"
               title="Travaux topographiques"
-              description="Levé topographique, bornage, nivellement et assistance technique pour projets de construction et d’infrastructures."
+              description="Levé topographique, bornage, nivellement, implantation et assistance technique pour les projets de construction et d’infrastructures."
             />
+
+            {/* 7 - Équipements BTP & miniers */}
+            <ServiceCard
+              icon="equipment"
+              title="Vente d’équipements BTP & miniers"
+              description="Fourniture et commercialisation d’équipements, machines et matériels destinés aux travaux de BTP, aux chantiers et aux activités minières."
+            />
+
           </div>
         </Container>
       </section>
